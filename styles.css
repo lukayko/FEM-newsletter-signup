@@ -1,0 +1,269 @@
+@font-face {
+  font-family: "Roboto Regular";
+  src: url(/assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url(/assets/fonts/Roboto-Bold.ttf) format("truetype");
+}
+* {
+  font-family: "Roboto Regular", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: hsl(234, 29%, 20%);
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(235, 18%, 26%);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Roboto Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 56px;
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.newsletter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 928px;
+  min-width: 928px;
+  height: 616px;
+  padding: 24px;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  border-radius: 36px;
+  filter: drop-shadow(hsla(0, 0%, 0%, 0.25) 0 15px 60px);
+  transform: translate(-50%, -50%);
+}
+.newsletter__mobile-image-wrapper {
+  width: 100vw;
+  height: 284px;
+  display: none;
+}
+.newsletter__mobile-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: none;
+}
+@media (max-width: 600px) {
+  .newsletter {
+    width: 100vw;
+    min-width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+  }
+  .newsletter__mobile-image {
+    display: block;
+  }
+  .newsletter__mobile-image-wrapper {
+    display: block;
+  }
+}
+.newsletter__left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  max-width: 376px;
+  margin-left: 50px;
+}
+@media (max-width: 600px) {
+  .newsletter__left-column {
+    height: 100vh;
+    max-width: none;
+    width: 100vw;
+    margin-left: 0;
+    padding: 24px;
+    margin-top: 16px;
+    justify-content: flex-start;
+  }
+}
+.newsletter__left-column ul {
+  padding: 0;
+  margin: 0 auto;
+}
+.newsletter__left-column ul li {
+  list-style-image: url("/assets/images/icon-list.svg");
+  padding: 0 0 0 16px;
+  margin: 0 0 10px 0;
+}
+.newsletter__left-column ul li::marker {
+  margin: auto 0;
+}
+.newsletter__left-column ul li:last-child {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .newsletter__left-column ul {
+    padding: 0 24px 0 24px;
+  }
+}
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  .newsletter__form {
+    margin-top: 16px;
+    height: 100%;
+  }
+  .newsletter__form button {
+    align-self: flex-end;
+  }
+}
+.newsletter__form-input {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  padding: 16px 24px;
+  border: 1px solid hsla(0, 0%, 0%, 0.25);
+  cursor: pointer;
+}
+.newsletter__form-input::-moz-placeholder {
+  color: hsla(0, 0%, 0%, 0.25);
+}
+.newsletter__form-input::placeholder {
+  color: hsla(0, 0%, 0%, 0.25);
+}
+.newsletter__form-input:focus {
+  outline: none;
+  border: 1px solid hsl(234, 29%, 20%);
+}
+.newsletter__form-label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.newsletter__form-label {
+  font-family: "Roboto Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.newsletter__form-label + .is-invalid {
+  color: hsl(4, 100%, 67%) !important;
+  display: none;
+}
+.newsletter__right-column {
+  height: 100%;
+  width: 400px;
+  max-width: 400px;
+}
+.newsletter__right-column img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 600px) {
+  .newsletter__right-column {
+    display: none;
+  }
+}
+
+.invalid-input {
+  border: 1px solid hsl(4, 100%, 67%) !important;
+  background-color: hsla(4, 100%, 67%, 0.15) !important;
+}
+.invalid-input::-moz-placeholder {
+  color: hsl(4, 100%, 67%) !important;
+}
+.invalid-input::placeholder {
+  color: hsl(4, 100%, 67%) !important;
+}
+
+.newsletter__success {
+  display: none;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  padding: 64px;
+  border-radius: 36px;
+  filter: drop-shadow(hsla(0, 0%, 0%, 0.25) 0 15px 60px);
+  width: 504px;
+  height: 520px;
+}
+.newsletter__success h1 {
+  margin-bottom: 24px;
+}
+.newsletter__success p {
+  margin-bottom: 16px;
+}
+.newsletter__success-icon {
+  height: 64px;
+  width: 64px;
+  margin: -16px 0 40px 0;
+}
+@media (max-width: 600px) {
+  .newsletter__success {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    padding: 150px 24px 24px 24px;
+  }
+  .newsletter__success-icon {
+    margin-top: 0;
+  }
+}
+
+.success__subscriber-email {
+  font-weight: bold;
+}
+
+.button {
+  position: relative;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  height: 56px;
+  font-family: "Roboto Bold", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 150%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 24px;
+  padding: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+.button:hover {
+  filter: drop-shadow(hsla(4, 100%, 67%, 0.5) 0 16px 32px);
+  background-image: linear-gradient(0deg, hsl(15, 100%, 61%) 0%, hsl(11, 100%, 62%) 10%, hsl(8, 100%, 62%) 21%, hsl(5, 100%, 63%) 32%, hsl(2, 100%, 64%) 42%, hsl(358, 100%, 64%) 53%, hsl(355, 100%, 65%) 64%, hsl(352, 100%, 65%) 76%, hsl(349, 100%, 65%) 88%, hsl(346, 100%, 66%) 100%);
+}
+@media (max-width: 600px) {
+  .button {
+    margin: auto 0 16px 0;
+  }
+  .button:hover {
+    filter: none;
+    background-image: none;
+  }
+}
+
+.attribute {
+  bottom: 100%;
+  text-align: center;
+}
+.attribute h2,
+.attribute a {
+  color: hsl(0, 0%, 100%);
+}/*# sourceMappingURL=styles.css.map */
