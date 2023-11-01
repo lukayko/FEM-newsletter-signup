@@ -33,8 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Netlify](https://stupendous-gaufre-b1397f.netlify.app/)
 
 ## Built with
 
@@ -44,4 +43,4 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.lukascervenka.dev)
+- Website - [LUKASCERVENKA.DEV](https://www.lukascervenka.dev)
